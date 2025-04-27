@@ -1,15 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Varela_Round } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const varelaRound = Varela_Round({
+  weight: "400", // Menentukan bobot font yang digunakan
+  style: "normal", // Menentukan style normal
+  subsets: ["latin"], // Menentukan subset karakter (misalnya latin)
+  variable: "--font-varela", // Mendefinisikan custom variable CSS untuk font
 });
 
 export const metadata: Metadata = {
@@ -25,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${varelaRound.variable}`}
       >
         {children}
       </body>
