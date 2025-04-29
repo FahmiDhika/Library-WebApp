@@ -7,6 +7,7 @@ import { AlertWarning } from "@/components/alert";
 
 // component feature
 import Search from "./search";
+import AddBook from "./addBook";
 
 const getBook = async (search: string): Promise<IBook[]> => {
   try {
@@ -83,7 +84,7 @@ const BookPage = async ({
     } else {
       return (
         <p className="w-fit h-fit bg-[#9CA3AF] text-black text-sm font-bold px-4 py-1 rounded-full">
-          RANDOM
+          Random
         </p>
       );
     }
@@ -111,6 +112,9 @@ const BookPage = async ({
       <div className="flex justify-between items-center mb-4">
         <div className="w-full lg:w-1/3">
           <Search url="/admin/book" search={search} />
+        </div>
+        <div>
+          <AddBook />
         </div>
       </div>
 
