@@ -29,6 +29,10 @@ export const get = async (url: string, token: string) => {
       };
     }
     console.log(err.response);
+    return {
+      status: false,
+      message: `Something were wrong: ${error}`,
+    };
   }
 };
 

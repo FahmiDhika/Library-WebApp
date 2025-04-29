@@ -40,9 +40,9 @@ const Sidebar = ({ children, id, title, itemList }: AdminProp) => {
   };
 
   return (
-    <div className="w-screen min-h-dvh">
+    <div className="w-screen min-h-dvh fixed">
       {/* navbar / header section*/}
-      <header className="w-full h-fit py-4 px-14 flex justify-between items-center">
+      <header className="w-full h-fit py-4 px-5 lg:px-14 flex justify-between items-center">
         {/* button sidebar */}
         <button onClick={() => setIsShow(true)} type="button">
           <IoMenu size={32} className="cursor-pointer" />
@@ -65,7 +65,7 @@ const Sidebar = ({ children, id, title, itemList }: AdminProp) => {
       </header>
 
       {/* content section */}
-      <div className="px-14 py-4">{children}</div>
+      <div className="px-5 lg:px-14 py-4">{children}</div>
 
       {/* sidebar section */}
       <div
@@ -88,7 +88,7 @@ const Sidebar = ({ children, id, title, itemList }: AdminProp) => {
               <Image src={logo} alt="" width={100} />
             </div>
             <h1 className="text-3xl font-bold tracking-wider mb-14">
-              Library Apaaap
+              Library App
             </h1>
           </div>
 
