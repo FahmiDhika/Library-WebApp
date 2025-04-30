@@ -81,7 +81,7 @@ export const put = async (
 ) => {
   try {
     const typed: string =
-      typeof data === "string" ? "application/json" : "multipart/form-data";
+      typeof data == "string" ? "application/json" : "multipart/form-data";
 
     let headers: any = {
       Authorization: `Bearer ${token}` || ``,
@@ -94,7 +94,7 @@ export const put = async (
 
     return {
       status: true,
-      message: result.data,
+      data: result.data,
     };
   } catch (error) {
     const err = error as AxiosError<{ message: string; code: number }>;

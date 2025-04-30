@@ -8,6 +8,7 @@ import { AlertWarning } from "@/components/alert";
 // component feature
 import Search from "./search";
 import AddBook from "./addBook";
+import EditBook from "./editBook";
 
 const getBook = async (search: string): Promise<IBook[]> => {
   try {
@@ -123,10 +124,10 @@ const BookPage = async ({
       ) : (
         <div className="border-2 rounded-t-lg">
           <div className="flex mb-2 text-center border-b-2">
-            <h1 className="w-1/12 font-black text-2xl">Book Id</h1>
-            <h1 className="w-4/12 font-black text-2xl">Book Name</h1>
-            <h1 className="w-2/12 font-black text-2xl">Book Type</h1>
-            <h1 className="w-3/12 font-black text-2xl">Status</h1>
+            <h1 className="w-1/12 font-black text-2xl border-r-2">Book Id</h1>
+            <h1 className="w-4/12 font-black text-2xl border-r-2">Book Name</h1>
+            <h1 className="w-2/12 font-black text-2xl border-r-2">Book Type</h1>
+            <h1 className="w-3/12 font-black text-2xl border-r-2">Status</h1>
             <h1 className="w-2/12 font-black text-2xl">Action</h1>
           </div>
           {book.map((book) => (
@@ -134,26 +135,26 @@ const BookPage = async ({
               key={`book-${book.bookId}`}
               className="w-full flex mb-2 text-center"
             >
-              <div className="w-1/12 flex justify-center items-center">
+              <div className="w-1/12 flex justify-center items-center border-r-2">
                 <h1 className="">{book.bookId}</h1>
               </div>
 
-              <div className="w-4/12 flex justify-center items-center">
+              <div className="w-4/12 flex justify-center items-center border-r-2">
                 <h1 className="">{book.bookName}</h1>
               </div>
 
               {/* book type coloumn */}
-              <div className="w-2/12 flex justify-center items-center">
+              <div className="w-2/12 flex justify-center items-center border-r-2">
                 <h1 className="">{type(book.bookType)}</h1>
               </div>
 
               {/* book status coloumn */}
-              <div className="w-3/12 flex justify-center items-center">
+              <div className="w-3/12 flex justify-center items-center border-r-2">
                 <h1 className="">{status(book.status)}</h1>
               </div>
 
-              <div className="w-2/12 flex justify-center items-center">
-                <h1>Edit & Delete component</h1>
+              <div className="w-2/12 flex justify-center items-center gap-4">
+                <EditBook selectedBook={book}></EditBook>
               </div>
             </div>
           ))}
